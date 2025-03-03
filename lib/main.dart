@@ -1,3 +1,4 @@
+import 'package:atlgram/pages/home_page.dart';
 import 'package:atlgram/pages/login_page.dart';
 import 'package:atlgram/pages/register_page.dart';
 import 'package:flutter/material.dart';
@@ -18,10 +19,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
         useMaterial3: true,
       ),
-      initialRoute: 'login',
+      initialRoute: 'home',
       routes: {
         'register': (context) => RegisterPage(),
         'login': (context) => LoginPage(),
+        'home': (context) => HomePage(),
       },
     );
   }

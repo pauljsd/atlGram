@@ -35,6 +35,7 @@ class LoginPageState extends State<LoginPage> {
                 title(),
                 form(),
                 loginButton(),
+                registerLink(),
               ],
             ),
           ),
@@ -100,6 +101,18 @@ class LoginPageState extends State<LoginPage> {
     );
   }
 
+  Widget registerLink() {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, 'register');
+      },
+      child: const Text(
+        'Dont have an account?',
+        style: TextStyle(color: Colors.blue, fontSize: 14),
+      ),
+    );
+  }
+
   Widget loginButton() {
     return MaterialButton(
       onPressed: loginUser,
@@ -107,11 +120,13 @@ class LoginPageState extends State<LoginPage> {
       minWidth: deviceWidth! * 0.60,
       height: deviceHeight! * 0.05,
       child: const Text('Login',
-          style: TextStyle(color: Colors.white, fontSize: 25)),
+          style: TextStyle(color: Colors.white, fontSize: 20 )),
     );
   }
 
   void loginUser() {
+    _loginFormKey.currentState!.save();
     if (_loginFormKey.currentState!.validate()) {}
+    _loginFormKey.currentState!.save();
   }
 }
